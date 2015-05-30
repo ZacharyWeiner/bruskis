@@ -24954,3 +24954,1401 @@ Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 03:47:58 -040
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 03:47:58 -0400
+  [1m[36m (230.9ms)[0m  [1mDROP DATABASE IF EXISTS "bruskis_development"[0m
+  [1m[35m (220.5ms)[0m  DROP DATABASE IF EXISTS "bruskis_test"
+  [1m[36m (354.0ms)[0m  [1mCREATE DATABASE "bruskis_development" ENCODING = 'unicode'[0m
+  [1m[35m (249.0ms)[0m  CREATE DATABASE "bruskis_test" ENCODING = 'unicode'
+  [1m[36mSQL (1.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.6ms)[0m  CREATE TABLE "active_admin_comments" ("id" serial primary key, "namespace" character varying(255), "body" text, "resource_id" character varying(255) NOT NULL, "resource_type" character varying(255) NOT NULL, "author_id" integer, "author_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments" USING btree ("author_type", "author_id")[0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments" USING btree ("namespace")
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments" USING btree ("resource_type", "resource_id")[0m
+  [1m[35m (4.3ms)[0m  CREATE TABLE "admin_users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users" USING btree ("email")[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users" USING btree ("reset_password_token")
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "brands" ("id" serial primary key, "name" character varying(255), "phone" character varying(255), "website" character varying(255), "picture" character varying(255), "created_at" timestamp, "updated_at" timestamp, "email" character varying(255)) [0m
+  [1m[35m (3.7ms)[0m  CREATE TABLE "brews" ("id" serial primary key, "brew_type" character varying(255), "grams_coffee" integer, "ounces_water" integer, "duration" integer, "duration_type" character varying(255), "roasts_id" integer, "description" character varying(255), "rating" integer, "created_at" timestamp, "updated_at" timestamp, "brand_id" integer, "roast_id" integer) 
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_brews_on_roasts_id" ON "brews" USING btree ("roasts_id")[0m
+  [1m[35m (4.3ms)[0m  CREATE TABLE "delayed_jobs" ("id" serial primary key, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" timestamp, "locked_at" timestamp, "failed_at" timestamp, "locked_by" character varying(255), "queue" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "delayed_jobs_priority" ON "delayed_jobs" USING btree ("priority", "run_at")[0m
+  [1m[35m (3.7ms)[0m  CREATE TABLE "roasts" ("id" serial primary key, "name" character varying(255), "roast_type" character varying(255), "description" character varying(255), "picture" character varying(255), "brand_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX  "index_roasts_on_brand_id" ON "roasts" USING btree ("brand_id")[0m
+  [1m[35m (4.7ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "picture" character varying(255), "first_name" character varying(255), "last_name" character varying(255)) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150530070556')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150527194321')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150527194334')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150527194344')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150527194349')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150527214447')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150527221438')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150530050406')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150530050848')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150530051357')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150530053229')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150530054044')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BrandsController#index as HTML
+  [1m[35mBrand Load (0.6ms)[0m  SELECT "brands".* FROM "brands"
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered brands/index.html.erb within layouts/application (15.5ms)
+  Rendered elements/_bootstrap.html.erb (0.5ms)
+  Rendered elements/_navbar.html.erb (2.5ms)
+  Rendered elements/_header.html.erb (4.3ms)
+  Rendered elements/_footer.html.erb (0.2ms)
+Completed 200 OK in 594ms (Views: 578.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:48 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:13:49 -0400
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-30 04:14:00 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (22.0ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  Rendered elements/_navbar.html.erb (0.8ms)
+  Rendered elements/_header.html.erb (1.7ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 251ms (Views: 236.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-05-30 04:14:09 -0400
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cKewbQ18XL1Ewdp+TT1usq3p2tB9cdLPuZPI0Xzikgc=", "user"=>{"email"=>"zacharyaweiner@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'zacharyaweiner@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 4ms
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cKewbQ18XL1Ewdp+TT1usq3p2tB9cdLPuZPI0Xzikgc=", "user"=>{"email"=>"zacharyaweiner@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  Rendered elements/_navbar.html.erb (0.7ms)
+  Rendered elements/_header.html.erb (1.6ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 294ms (Views: 223.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:14:10 -0400
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.0ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  Rendered elements/_navbar.html.erb (0.8ms)
+  Rendered elements/_header.html.erb (1.8ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 246ms (Views: 244.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:14 -0400
+
+
+Started POST "/signup" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cKewbQ18XL1Ewdp+TT1usq3p2tB9cdLPuZPI0Xzikgc=", "user"=>{"first_name"=>"Zachary", "last_name"=>"Weiner", "email"=>"zacharyaweiner@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'zacharyaweiner@gmail.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "first_name", "last_name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2015-05-30 08:15:26.324480"], ["email", "zacharyaweiner@gmail.com"], ["encrypted_password", "$2a$10$yqI03yWetlcFdlF..jObL.W21xRMoqGgLfeTaO5DLiQmqTwERdRlq"], ["first_name", "Zachary"], ["last_name", "Weiner"], ["updated_at", "2015-05-30 08:15:26.324480"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = 1  [["current_sign_in_at", "2015-05-30 08:15:26.329197"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-05-30 08:15:26.329197"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2015-05-30 08:15:26.330054"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 104ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+Processing by BrandsController#index as HTML
+  [1m[35mBrand Load (0.3ms)[0m  SELECT "brands".* FROM "brands"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered brands/index.html.erb within layouts/application (1.9ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  Rendered elements/_navbar.html.erb (1.0ms)
+  Rendered elements/_header.html.erb (2.0ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 215ms (Views: 213.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:26 -0400
+
+
+Started GET "/brands/new" for 127.0.0.1 at 2015-05-30 04:15:31 -0400
+Processing by BrandsController#new as HTML
+  Rendered brands/_form.html.erb (63.4ms)
+  Rendered brands/new.html.erb within layouts/application (66.3ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered elements/_navbar.html.erb (1.8ms)
+  Rendered elements/_header.html.erb (2.7ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 285ms (Views: 281.0ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/brands" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+Processing by BrandsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cKewbQ18XL1Ewdp+TT1usq3p2tB9cdLPuZPI0Xzikgc=", "brand"=>{"name"=>"CC", "phone"=>"999-888-8888", "website"=>"www.counterculturecoffee.com", "email"=>"info@gramb.com", "picture"=>#<ActionDispatch::Http::UploadedFile:0x007f8c3dfce5b0 @tempfile=#<Tempfile:/var/folders/fy/3n48sl952_b7jsr4y6y40q600000gn/T/RackMultipart20150530-38255-1yxsevh>, @original_filename="counterculture.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"brand[picture]\"; filename=\"counterculture.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Brand"}
+Unpermitted parameters: email
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "brands" ("created_at", "name", "phone", "picture", "updated_at", "website") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2015-05-30 08:15:58.447858"], ["name", "CC"], ["phone", "999-888-8888"], ["picture", "counterculture.jpeg"], ["updated_at", "2015-05-30 08:15:58.447858"], ["website", "www.counterculturecoffee.com"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/brands/1
+Completed 302 Found in 118ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/brands/1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+Processing by BrandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBrand Load (0.3ms)[0m  SELECT  "brands".* FROM "brands"  WHERE "brands"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mRoast Load (0.4ms)[0m  [1mSELECT "roasts".* FROM "roasts"  WHERE "roasts"."brand_id" = $1[0m  [["brand_id", 1]]
+  Rendered brands/show.html.erb within layouts/application (23.9ms)
+  Rendered elements/_bootstrap.html.erb (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered elements/_navbar.html.erb (2.1ms)
+  Rendered elements/_header.html.erb (3.2ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 253ms (Views: 248.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:58 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:59 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:59 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:59 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:59 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:59 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:59 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:15:59 -0400
+
+
+Started GET "/brands/1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+Processing by BrandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBrand Load (0.2ms)[0m  [1mSELECT  "brands".* FROM "brands"  WHERE "brands"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mRoast Load (0.2ms)[0m  SELECT "roasts".* FROM "roasts"  WHERE "roasts"."brand_id" = $1  [["brand_id", 1]]
+  Rendered brands/show.html.erb within layouts/application (9.2ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered elements/_navbar.html.erb (12.4ms)
+  Rendered elements/_header.html.erb (13.9ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 225ms (Views: 212.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:17:49 -0400
+
+
+Started GET "/brands/1" for 127.0.0.1 at 2015-05-30 04:18:14 -0400
+Processing by BrandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBrand Load (0.3ms)[0m  SELECT  "brands".* FROM "brands"  WHERE "brands"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mRoast Load (0.3ms)[0m  [1mSELECT "roasts".* FROM "roasts"  WHERE "roasts"."brand_id" = $1[0m  [["brand_id", 1]]
+  Rendered brands/show.html.erb within layouts/application (3.6ms)
+  Rendered elements/_bootstrap.html.erb (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered elements/_navbar.html.erb (2.2ms)
+  Rendered elements/_header.html.erb (3.4ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 225ms (Views: 222.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:14 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:14 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:15 -0400
+
+
+Started GET "/brands/1/edit" for 127.0.0.1 at 2015-05-30 04:18:21 -0400
+Processing by BrandsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBrand Load (0.3ms)[0m  [1mSELECT  "brands".* FROM "brands"  WHERE "brands"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered brands/_form.html.erb (10.6ms)
+  Rendered brands/edit.html.erb within layouts/application (12.2ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered elements/_navbar.html.erb (1.9ms)
+  Rendered elements/_header.html.erb (2.8ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 221ms (Views: 218.9ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/brands/1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+Processing by BrandsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cKewbQ18XL1Ewdp+TT1usq3p2tB9cdLPuZPI0Xzikgc=", "brand"=>{"name"=>"CC", "phone"=>"999-888-8888", "website"=>"www.counterculturecoffee.com", "email"=>"info@ccc.com"}, "commit"=>"Update Brand", "id"=>"1"}
+  [1m[36mBrand Load (0.3ms)[0m  [1mSELECT  "brands".* FROM "brands"  WHERE "brands"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "brands" SET "email" = $1, "updated_at" = $2 WHERE "brands"."id" = 1[0m  [["email", "info@ccc.com"], ["updated_at", "2015-05-30 08:18:28.339911"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/brands/1
+Completed 302 Found in 29ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/brands/1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+Processing by BrandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBrand Load (0.8ms)[0m  [1mSELECT  "brands".* FROM "brands"  WHERE "brands"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mRoast Load (0.7ms)[0m  SELECT "roasts".* FROM "roasts"  WHERE "roasts"."brand_id" = $1  [["brand_id", 1]]
+  Rendered brands/show.html.erb within layouts/application (3.0ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered elements/_navbar.html.erb (1.9ms)
+  Rendered elements/_header.html.erb (2.9ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 219ms (Views: 215.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:18:28 -0400
+
+
+Started GET "/contact" for 127.0.0.1 at 2015-05-30 04:18:42 -0400
+Processing by PagesController#contact as HTML
+  Rendered pages/contact.html.erb within layouts/application (0.3ms)
+  Rendered elements/_bootstrap.html.erb (0.3ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered elements/_navbar.html.erb (7.2ms)
+  Rendered elements/_header.html.erb (8.7ms)
+  Rendered elements/_footer.html.erb (0.2ms)
+Completed 200 OK in 199ms (Views: 197.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-30 04:18:43 -0400
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered elements/_navbar.html.erb (1.9ms)
+  Rendered elements/_header.html.erb (3.4ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 214ms (Views: 213.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/index" for 127.0.0.1 at 2015-05-30 04:18:44 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.3ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered elements/_navbar.html.erb (1.9ms)
+  Rendered elements/_header.html.erb (3.3ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 207ms (Views: 206.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 04:18:48 -0400
+Processing by BrandsController#index as HTML
+  [1m[36mBrand Load (0.3ms)[0m  [1mSELECT "brands".* FROM "brands"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered brands/index.html.erb within layouts/application (2.8ms)
+  Rendered elements/_bootstrap.html.erb (0.1ms)
+  Rendered elements/_navbar.html.erb (0.6ms)
+  Rendered elements/_header.html.erb (1.6ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 206ms (Views: 204.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+Processing by BrandsController#index as HTML
+  [1m[36mBrand Load (0.3ms)[0m  [1mSELECT "brands".* FROM "brands"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered brands/index.html.erb within layouts/application (3.2ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  Rendered elements/_navbar.html.erb (0.6ms)
+  Rendered elements/_header.html.erb (1.5ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 255ms (Views: 253.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:55 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:56 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 04:19:56 -0400
+
+
+Started GET "/contact" for 127.0.0.1 at 2015-05-30 04:20:19 -0400
+Processing by PagesController#contact as HTML
+  Rendered pages/contact.html.erb within layouts/application (0.0ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered elements/_navbar.html.erb (1.6ms)
+  Rendered elements/_header.html.erb (3.0ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 195ms (Views: 193.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2015-05-30 04:20:20 -0400
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.1ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered elements/_navbar.html.erb (1.6ms)
+  Rendered elements/_header.html.erb (3.0ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 185ms (Views: 183.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages/index" for 127.0.0.1 at 2015-05-30 04:20:20 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.1ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered elements/_navbar.html.erb (1.7ms)
+  Rendered elements/_header.html.erb (3.1ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 184ms (Views: 182.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 04:20:22 -0400
+Processing by BrandsController#index as HTML
+  [1m[35mBrand Load (0.3ms)[0m  SELECT "brands".* FROM "brands"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered brands/index.html.erb within layouts/application (2.9ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  Rendered elements/_navbar.html.erb (0.6ms)
+  Rendered elements/_header.html.erb (1.5ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 220ms (Views: 218.4ms | ActiveRecord: 0.6ms)

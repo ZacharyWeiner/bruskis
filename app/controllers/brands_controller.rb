@@ -6,7 +6,7 @@ class BrandsController < InheritedResources::Base
   private
 
     def brand_params
-      params.require(:brand).permit(:name, :phone, :website, :picture)
+      params.require(:brand).permit(:name, :phone, :website, :picture, :email)
     end
 end
 
