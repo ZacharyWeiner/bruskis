@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :brews
+  resources :roasts
+  resources :brands
+
   get 'pages/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -8,7 +12,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#index'
+  root 'brands#index'
   get  'contact' => 'pages#contact'
   get  'about' => 'pages#about'
   match ':controller(/:action(/:id(.:format)))', :via => [:get, :post]

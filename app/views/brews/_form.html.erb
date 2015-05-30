@@ -1,0 +1,21 @@
+<%= simple_form_for(@brew) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :brew_type %>
+    <%= f.input :grams_coffee %>
+    <%= f.input :ounces_water %>
+    <%= f.input :duration %>
+    <%= f.input :duration_type %>
+    <% unless @brew.brand == nil %>
+      <%= f.label @brew.brand.name %>
+    <% end %>
+    <%= f.association :roast %>
+    <%= f.input :description %>
+    <%= f.input :rating %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

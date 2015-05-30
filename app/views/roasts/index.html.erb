@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h1>Coffee our Coffee Drinkers Love</h1>
+  <p>Reviews on the methods for brewing</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+
+  <div class=" center row">
+    <% @roasts.each do |roast| %>
+      <div class="col-md-3">
+        <h3><%= roast.name %></h3> 
+        <h5><%= roast.brand.name %></h5>  
+          <div class="thumbnail">
+            <%= link_to image_tag(roast.picture), roast %>
+            <div class="caption">
+              <p>Phone  : <%= roast.description %></p><br/>
+              <p><a href='<%= roast.brand.website %>' ><%= roast.brand.website%></p><br/>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+<br>
+<% if(user_signed_in?) %>
+  <%= link_to 'New Roast', new_roast_path, class: "btn btn-primary btn-lg" %>
+<% end %>

@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+ <%= link_to 'New Brew', new_brew_path, class: "btn btn-primary btn-lg" %>
+<div class="row"> 
+  <div class="col-md-3">
+    <h3><%= @roast.name %></h3>
+    <h5><%= @roast.brand.name %></h5>    
+    <div class="thumbnail">
+      <%= link_to image_tag(@roast.picture), @roast %>
+      <div class="caption">
+        <p>Roast  : <%= @roast.roast_type %></p><br/>
+        <p><%= @roast.description %></p><br/>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <% unless @roast.brews == nil %>
+    <% @roast.brews.each do |b| %>
+    <div class="row" style="background-color:#EFEFFF">
+      <div class="col-md-4">
+        <p>Rating Goes Here </p>
+      </div>
+      <div class="col-md-8">
+        <h3>Brew: <%= b.brew_type %></h3>  
+        <p><%= b.description%></p><br/>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="clear"></div>
+<%= link_to 'Edit', edit_roast_path(@roast) %> |
+<%= link_to 'Back', roasts_path %>
+</div>
+
+
+
+

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @brew.type %>
+</p>
+
+<p>
+  <strong>Grams coffee:</strong>
+  <%= @brew.grams_coffee %>
+</p>
+
+<p>
+  <strong>Ounces water:</strong>
+  <%= @brew.ounces_water %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @brew.duration %>
+</p>
+
+<p>
+  <strong>Duration type:</strong>
+  <%= @brew.duration_type %>
+</p>
+
+<p>
+  <strong>Roast:</strong>
+  <%= @brew.roast %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @brew.description %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @brew.rating %>
+</p>
+
+<%= link_to 'Edit', edit_brew_path(@brew) %> |
+<%= link_to 'Back', brews_path %>

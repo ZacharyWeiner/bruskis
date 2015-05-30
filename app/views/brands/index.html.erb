@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h1>Coffee our Coffee Drinkers Love</h1>
+  <p>Reviews on the methods for brewing</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+
+  <div class=" center row">
+    <% @brands.each do |brand| %>
+      <div class="col-md-3">
+        <h3><%= brand.name %></h3>  
+          <div class="thumbnail">
+            <%= link_to image_tag(brand.picture), brand%>
+            <div class="caption">
+              <p>Phone  : <%= brand.phone %></p><br/>
+              <p>Email  : <%= brand.email %></p><br/>
+              <p><a href='<%= brand.website %>' ><%= brand.website%></p><br/>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+<br>
+<% if(user_signed_in?) %>
+  <%= link_to 'New Brand', new_brand_path, class: "btn btn-primary btn-lg" %>
+<% end %>

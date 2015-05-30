@@ -1,0 +1,18 @@
+<h1> Brews </h1>
+  <div class=" center row">
+    <% @brews.each do |brew| %>
+      <div class="col-md-3">
+        <h3><%= brew.name %></h3>  
+          <div class="thumbnail">
+            <%= link_to image_tag(brew.roast.picture), brew%>
+            <div class="caption">
+              <p>Rating  : <%= brew.rating %></p><br/>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+<br>
+<% if(user_signed_in?) %>
+  <%= link_to 'New Brew', new_brew_path, class: "btn btn-primary btn-lg" %>
+<% end %>
