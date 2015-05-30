@@ -4315,3 +4315,833 @@ Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 05:33:47 -040
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 05:33:47 -0400
+
+
+Started GET "/brews" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BrewsController#index as HTML
+  [1m[35mBrew Load (1.5ms)[0m  SELECT "brews".* FROM "brews"
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered brews/index.html.erb within layouts/application (18.8ms)
+  Rendered elements/_bootstrap.html.erb (0.5ms)
+  Rendered elements/_navbar.html.erb (2.9ms)
+  Rendered elements/_header.html.erb (5.9ms)
+  Rendered elements/_footer.html.erb (0.6ms)
+Completed 200 OK in 516ms (Views: 501.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:31 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:32 -0400
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2015-05-30 05:42:33 -0400
+Processing by BrewsController#new as HTML
+  [1m[35mRoast Load (1.6ms)[0m  SELECT "roasts".* FROM "roasts"
+  Rendered brews/_form.html.erb (85.0ms)
+  Rendered brews/new.html.erb within layouts/application (87.3ms)
+  Rendered elements/_bootstrap.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered elements/_navbar.html.erb (2.5ms)
+  Rendered elements/_header.html.erb (4.4ms)
+  Rendered elements/_footer.html.erb (0.1ms)
+Completed 200 OK in 313ms (Views: 305.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/roasts" for 127.0.0.1 at 2015-05-30 05:42:58 -0400
+Processing by RoastsController#index as HTML
+  [1m[35mRoast Load (0.3ms)[0m  SELECT "roasts".* FROM "roasts"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered roasts/index.html.erb within layouts/application (2.7ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  Rendered elements/_navbar.html.erb (0.6ms)
+  Rendered elements/_header.html.erb (1.7ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 229ms (Views: 227.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 05:42:59 -0400
+
+
+Started GET "/roasts/new" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+Processing by RoastsController#new as HTML
+  [1m[35mBrand Load (0.8ms)[0m  SELECT "brands".* FROM "brands"
+  Rendered roasts/_form.html.erb (28.3ms)
+  Rendered roasts/new.html.erb within layouts/application (29.9ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered elements/_navbar.html.erb (2.1ms)
+  Rendered elements/_header.html.erb (3.3ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 226ms (Views: 216.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:02 -0400
+
+
+Started POST "/roasts" for 127.0.0.1 at 2015-05-30 05:43:23 -0400
+Processing by RoastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cKewbQ18XL1Ewdp+TT1usq3p2tB9cdLPuZPI0Xzikgc=", "roast"=>{"name"=>"Mocha Java", "roast_type"=>"Medium ", "description"=>"Fruity, Milk Chocolate, Syrupy ", "picture"=>#<ActionDispatch::Http::UploadedFile:0x007fe2effd4b28 @tempfile=#<Tempfile:/var/folders/fy/3n48sl952_b7jsr4y6y40q600000gn/T/RackMultipart20150530-40092-lcwfp4>, @original_filename="mocha_java.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"roast[picture]\"; filename=\"mocha_java.jpg\"\r\nContent-Type: image/jpeg\r\n">, "brand_id"=>"1"}, "commit"=>"Create Roast"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "roasts" ("brand_id", "created_at", "description", "name", "picture", "roast_type", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["brand_id", 1], ["created_at", "2015-05-30 09:43:23.988149"], ["description", "Fruity, Milk Chocolate, Syrupy "], ["name", "Mocha Java"], ["picture", "mocha_java.jpg"], ["roast_type", "Medium "], ["updated_at", "2015-05-30 09:43:23.988149"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/roasts/1
+Completed 302 Found in 934ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/roasts/1" for 127.0.0.1 at 2015-05-30 05:43:24 -0400
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoast Load (0.3ms)[0m  [1mSELECT  "roasts".* FROM "roasts"  WHERE "roasts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mBrand Load (0.3ms)[0m  SELECT  "brands".* FROM "brands"  WHERE "brands"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mBrew Load (0.3ms)[0m  [1mSELECT "brews".* FROM "brews"  WHERE "brews"."roast_id" = $1[0m  [["roast_id", 1]]
+  Rendered roasts/show.html.erb within layouts/application (17.9ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered elements/_navbar.html.erb (2.1ms)
+  Rendered elements/_header.html.erb (3.5ms)
+  Rendered elements/_footer.html.erb (0.1ms)
+Completed 200 OK in 245ms (Views: 241.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 05:43:25 -0400
+
+
+Started GET "/brews/new" for 127.0.0.1 at 2015-05-30 05:43:26 -0400
+Processing by BrewsController#new as HTML
+  [1m[36mRoast Load (0.3ms)[0m  [1mSELECT "roasts".* FROM "roasts"[0m
+  Rendered brews/_form.html.erb (22.9ms)
+  Rendered brews/new.html.erb within layouts/application (24.9ms)
+  Rendered elements/_bootstrap.html.erb (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered elements/_navbar.html.erb (2.4ms)
+  Rendered elements/_header.html.erb (4.2ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 241ms (Views: 238.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/brews" for 127.0.0.1 at 2015-05-30 05:43:42 -0400
+Processing by BrewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cKewbQ18XL1Ewdp+TT1usq3p2tB9cdLPuZPI0Xzikgc=", "brew"=>{"brew_type"=>"Cold", "grams_coffee"=>"1", "ounces_water"=>"1", "duration"=>"1", "duration_type"=>"hour", "roast_id"=>"1", "description"=>"gross", "rating"=>"1"}, "commit"=>"Create Brew"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "brews" ("brew_type", "created_at", "description", "duration", "duration_type", "grams_coffee", "ounces_water", "rating", "roast_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["brew_type", "Cold"], ["created_at", "2015-05-30 09:43:42.994000"], ["description", "gross"], ["duration", 1], ["duration_type", "hour"], ["grams_coffee", 1], ["ounces_water", 1], ["rating", 1], ["roast_id", 1], ["updated_at", "2015-05-30 09:43:42.994000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/brews/1
+Completed 302 Found in 25ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/brews/1" for 127.0.0.1 at 2015-05-30 05:43:43 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBrew Load (0.4ms)[0m  SELECT  "brews".* FROM "brews"  WHERE "brews"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered brews/show.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 21ms
+
+NoMethodError - undefined method `type' for #<Brew:0x007fe2eff3bec8>:
+  activemodel (4.1.4) lib/active_model/attribute_methods.rb:435:in `method_missing'
+  activerecord (4.1.4) lib/active_record/attribute_methods.rb:208:in `method_missing'
+  app/views/brews/show.html.erb:5:in `_app_views_brews_show_html_erb___824911272514330921_70306332527560'
+  actionview (4.1.4) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.4) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.4) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.4) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.4) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.4) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.4) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.4) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/Zack/.rbenv/versions/2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.4) lib/action_controller/metal/responder.rb:238:in `default_render'
+  actionpack (4.1.4) lib/action_controller/metal/responder.rb:165:in `to_html'
+  responders (1.1.2) lib/responders/flash_responder.rb:107:in `to_html'
+  actionpack (4.1.4) lib/action_controller/metal/responder.rb:158:in `respond'
+  actionpack (4.1.4) lib/action_controller/metal/responder.rb:151:in `call'
+  actionpack (4.1.4) lib/action_controller/metal/mime_responds.rb:400:in `respond_with'
+  inherited_resources (1.6.0) lib/inherited_resources/actions.rb:13:in `show'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.3) lib/rack/etag.rb:23:in `call'
+  rack (1.5.3) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.3) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.3) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.3) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.3) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.3) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.3) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.3) lib/rack/lock.rb:17:in `call'
+  rack (1.5.3) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.3) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/Zack/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Zack/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Zack/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/b21f5c95ef25659e/variables" for 127.0.0.1 at 2015-05-30 05:43:43 -0400
+
+
+Started GET "/brews/1" for 127.0.0.1 at 2015-05-30 05:44:13 -0400
+Processing by BrewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBrew Load (0.3ms)[0m  [1mSELECT  "brews".* FROM "brews"  WHERE "brews"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mRoast Load (0.3ms)[0m  SELECT  "roasts".* FROM "roasts"  WHERE "roasts"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered brews/show.html.erb within layouts/application (2.1ms)
+  Rendered elements/_bootstrap.html.erb (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered elements/_navbar.html.erb (1.7ms)
+  Rendered elements/_header.html.erb (2.7ms)
+  Rendered elements/_footer.html.erb (0.0ms)
+Completed 200 OK in 215ms (Views: 212.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/bootstrap_configuration.css?body=1" for 127.0.0.1 at 2015-05-30 05:44:13 -0400
+
+
+Started GET "/assets/brews.css?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/brands.css?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/roasts.css?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/lib/per_page.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/brands.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/brews.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/roasts.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 05:44:14 -0400
