@@ -4,6 +4,7 @@ CarrierWave.configure do |config|
     provider:              'AWS',                        # required
     aws_access_key_id:     ENV['aws_access_key_id'],                        # required
     aws_secret_access_key: ENV['aws_secret_access_key'],                        # required
+    region:                'eu-west-1',
   }
   config.fog_directory  = ENV['fog_directory']                          # required
   config.fog_public     = false                                        # optional, defaults to true

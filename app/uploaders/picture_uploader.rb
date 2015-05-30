@@ -14,7 +14,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   # storage :fog is and instruction to save the file on a remote storage 
    storage :fog
   else 
-    storage :file
+    storage :fog
   end
 
   # Override the directory where uploaded files will be stored.
